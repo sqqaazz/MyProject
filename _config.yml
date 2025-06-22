@@ -1,4 +1,5 @@
 title: MyProject
-description: GitHub.io
+description: Description of my Project
+show_downloads: false
+google_analytics:
 theme: jekyll-theme-slate
-future: true
