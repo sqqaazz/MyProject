@@ -490,35 +490,101 @@ Small Device Styles
 /******************************************************************************* 
 Post Thumbnail Cards 
 *******************************************************************************/
-
 .post-thumbnail {
-  background: #ffffff;
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  //padding-left: 100px;
+  gap: 20px;
+}
+
+.post-card {
+  display: flex;
+  //background: #fff;
+  height: 200px;
+  width: 800px;
+  border: 0px solid #ccc;
   border-radius: 8px;
-  margin-bottom: 30px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .post-image-wrapper {
+    flex: 0 0 200px;
+    padding: 10px;
+
+    .post-image {
+      width: 180px;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .post-content {
+    flex: 1;
+    padding: 15px;
+
+    .post-title {
+      font-size: 20px;
+      margin: 0 0 10px;
+
+      a {
+        color: #222;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .post-excerpt {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+    }
+
+    .read-more {
+      font-size: 14px;
+      color: #007acc;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.post-thumbnail:hover {
-  transform: scale(1.02);
+.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  max-width: 1200px;
+  //margin: 0 auto;
+  align-items: flex-start;
 }
 
-.post-thumbnail img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
+.sidebar {
+  position: fixed;
+  top: 200px;
+  right: 30px;
+  width: 220px;
+  //background: #fff;
+  padding: 20px;
+  border: 0px solid #ddd;
+  border-radius: 8px;
+  height: fit-content;
 
-.post-thumbnail h2 {
-  font-size: 20px;
-  margin: 0 0 10px;
-  color: #222;
-}
-
-.post-thumbnail p {
-  font-size: 14px;
-  color: #666;
+   margin-left: 30px;
 }
