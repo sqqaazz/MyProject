@@ -3,11 +3,20 @@
   <ul class="category-list">
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
-      <li>
-        <a href="/categories/{{ category[0] | slugify }}/">
+      <li class="category-item">
+        <a href="javascript:void(0);" class="category-toggle" data-category="{{ category[0] | slugify }}">
+          <span class="toggle-icon">▶</span>
           {{ category[0] }}
-          <span class="count">{{ category[1].size }}</span>
+          <span class="count">({{ category[1].size }})</span>
         </a>
+
+        <ul class="post-list hidden" id="posts-{{ category[0] | slugify }}">
+          {% for post in category[1] %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       </li>
     {% endfor %}
   </ul>

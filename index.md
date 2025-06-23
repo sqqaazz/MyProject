@@ -19,6 +19,7 @@ title: Home
       <div class="post-content">
         <h3 class="post-title">
           <a href="{{ post.url }}">{{ post.title }}</a>
+          <p class ="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
         </h3>
         <p class="post-excerpt">{{ post.excerpt }}</p>
       </div>

@@ -3,3 +3,4 @@ description: Description of my Project
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-slate
+excerpt_separator: "<!--more-->"

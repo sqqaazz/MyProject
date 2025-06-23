@@ -7,9 +7,17 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+    <link rel="stylesheet" href="{{ '/assets/css/prism.css' | relative_url }}">
+
 {% seo %}
     {% include head-custom.html %}
   </head>
+
+  <header class="site-header">
+    <div class="home-link">
+      <a href="{{ '/' | relative_url }}">MyProject</a>
+    </div>
+  </header>
 
   <body>
 
@@ -38,6 +46,28 @@
         {{ content }}
       </section>
     </div>
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+      const toggles = document.querySelectorAll(".category-toggle");
+
+      toggles.forEach(function (toggle) {
+       toggle.addEventListener("click", function () {
+        const category = toggle.dataset.category;
+        const postList = document.getElementById("posts-" + category);
+        const icon = toggle.querySelector(".toggle-icon");
+
+        const isHidden = postList.classList.contains("hidden");
+        postList.classList.toggle("hidden");
+
+        if (isHidden) {
+          icon.textContent = "▼";
+        } else {
+          icon.textContent = "▶";
+        }
+       });
+      });
+     });
+    </script>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
@@ -48,5 +78,8 @@
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
+
+
+     <script src="{{ '/assets/js/prism.js' | relative_url }}"></script>
   </body>
 </html>
