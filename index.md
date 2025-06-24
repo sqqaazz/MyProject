@@ -9,16 +9,16 @@ title: Home
 
 <section class="post-thumbnail">
   {% for post in site.posts %}
-   <a href="{{ post.url }}" class="post-card-link">
+   <a href="{{ post.url | relative_url }}" class="post-card-link">
     <div class="post-card">
       {% if post.image %}
         <div class="post-image-wrapper">
-          <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
         </div>
       {% endif %}
       <div class="post-content">
         <h3 class="post-title">
-          <a href="{{ post.url }}">{{ post.title }}</a>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           <p class ="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
         </h3>
         <p class="post-excerpt">{{ post.excerpt }}</p>
