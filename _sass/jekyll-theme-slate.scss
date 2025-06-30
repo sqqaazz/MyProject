@@ -624,6 +624,11 @@ Post Thumbnail Cards
   color: #e0e0e0;
 }
 
+.post-content p {
+  margin-bottom: 3.0em; 
+  line-height: 1.6; 
+}
+
 .post-date {
   font-size: 14px;
   color: #888;
@@ -774,4 +779,57 @@ code,
     //color: #888;
     font-weight: bold;
   }
+}
+
+.resume-container {
+  display: flex;
+  overflow: visible;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+   margin-left: 0;
+  margin-right: 0;
+  padding-left: 10rem;
+  
+}
+
+.resume-toc {
+  position: fixed;
+  top: 2rem;
+  left: 10rem; 
+  width: 200px;
+  height: calc(100vh - 2rem);
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  font-size: 20px;
+  line-height: 3.0;
+}
+
+.resume-content {
+  margin-left: 220px;
+}
+
+.resume-toc ul {
+  list-style: none;
+  padding: 0;
+  font-weight: bold;
+}
+
+.resume-toc a {
+  text-decoration: none;
+  color: #333;
+}
+
+.resume-toc a:hover {
+  color: #007acc;
+}
+
+.resume-toc a.active {
+  font-size: 24px;
+  color: #007acc;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
 }
