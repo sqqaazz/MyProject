@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,maximum-scale=2">
   <link rel="stylesheet" type="text/css" media="screen"
     href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="{{ '/assets/css/prism.css' | relative_url }}">
 </head>
 
@@ -22,37 +22,61 @@
     <nav class="resume-toc">
       <ul>
         <li><a href="#profile">About</a></li>
-        <li><a href="#experience">experience</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#skills">skills</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <!-- <li><a href="#experience">experience</a></li> -->
+        <li><a href="#projects">Project</a></li>
       </ul>
     </nav>
 
     <!-- 오른쪽 본문 -->
     <div class="resume-content">
       <section id="profile">
-        <!--<h2>👤 프로필</h2> -->
-        <p>신재현</p>
-        <p>GitHub: {{ site.github.repository_url }}</p>
+        <h2><span style="color: gray; font-weight: bold; font-size: 40px;">About</span></h2>
+        <p>👤 신재현</p>
+        <p><i class="fas fa-envelope" style="margin-right: 0.7em;"></i>ssqqazz333@gmail.com</p>
+        <p>
+          <i class="fab fa-github" style="margin-right: 0.5em;"></i>
+          <a href="https://github.com/sqqaazz" target="_blank">
+            {{ site.github.repository_url }}
+          </a>
+        </p>
       </section>
 
+      <!--
       <section id="experience">
         <h2>📁 experience</h2>
       </section>
-
-      <section id="projects">
-        <h2>📁 projects</h2>
-      </section>
+      -->
 
       <section id="skills">
-        <h2>🛠️ 기술 스택</h2>
+        <h2><span style="color: gray; font-weight: bold; font-size: 28px;">Skills</span></h2>
+        <!--
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="24" style="vertical-align: middle; margin-right: 0.5em;">
         <p>C++</p>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" width="24" style="vertical-align: middle; margin-right: 0.5em;">
         <p>Unreal Engine</p>
+        -->
       </section>
 
+      <section id="projects">
+        <h2><span style="color: gray; font-weight: bold; font-size: 28px;">Project</span></h2>
+        <ul>
+          {% for category in site.categories %}
+          <li>
+            <a href="{{ site.baseurl }}/category/{{ category[0] | uri_escape }}/">
+              {{ category[0] }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+      </section>
+
+      <!--
       <section id="education">
         <h2>📚 education</h2>
       </section>
+    -->
     </div>
 
     <script>
