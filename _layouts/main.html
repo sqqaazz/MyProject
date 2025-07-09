@@ -50,26 +50,34 @@
 
       <section id="skills">
         <h2><span style="color: gray; font-weight: bold; font-size: 28px;">Skills</span></h2>
-        <!--
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="24" style="vertical-align: middle; margin-right: 0.5em;">
+
+        <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="24" style="vertical-align: middle; margin-right: 0.5em;"> -->
         <p>C++</p>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" width="24" style="vertical-align: middle; margin-right: 0.5em;">
+        <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" width="24" style="vertical-align: middle; margin-right: 0.5em;"> -->
         <p>Unreal Engine</p>
-        -->
+
       </section>
 
       <section id="projects">
         <h2><span style="color: gray; font-weight: bold; font-size: 28px;">Project</span></h2>
-        <ul>
+        <div class="thumbnail-grid">
           {% for category in site.categories %}
-          <li>
-            <a href="{{ site.baseurl }}/category/{{ category[0] | uri_escape }}/">
-              {{ category[0] }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+          {% assign category_name = category[0] %}
+          {% assign category_image = site.data.category_images[category_name] %}
 
+          <div class="thumbnail-card">
+            <a href="{{ site.baseurl }}/category/{{ category[0] | uri_escape }}/">
+              <div class="thumbnail-image-wrapper">
+                <img src="{{ category_image | default: '/assets/images/placeholder.jpg' | relative_url }}"
+                  alt="{{ category_name }}">
+              </div>
+              <div class="thumbnail-title">
+                {{ category_name }}
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
       </section>
 
       <!--

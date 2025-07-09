@@ -269,6 +269,8 @@ Small Device Styles
 /******************************************************************************* 
 Post Thumbnail Cards 
 *******************************************************************************/
+section { margin-top: 12rem; margin-bottom: 12rem; }
+
 .post-thumbnail { display: flex; flex-direction: column; gap: 20px; }
 
 .post-card { display: flex; height: 200px; width: 800px; border: 0px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out; }
@@ -309,6 +311,18 @@ Post Thumbnail Cards
 .post-navigation { margin-top: 40px; display: flex; justify-content: space-between; }
 .post-navigation a { color: #007acc; text-decoration: none; font-weight: 500; }
 .post-navigation a:hover { text-decoration: underline; }
+
+.thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem; padding: 2rem 0; }
+
+.thumbnail-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: transform 0.2s; background-color: #fff; color: #000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+
+.thumbnail-card:hover { transform: translateY(-5px); }
+
+.thumbnail-card a { text-decoration: none; color: inherit; display: block; }
+
+.thumbnail-image-wrapper img { width: 100%; height: 150px; object-fit: cover; display: block; }
+
+.thumbnail-title { text-align: center; font-size: 1rem; font-weight: 600; padding: 0.8rem; }
 
 .sidebar { position: fixed; top: 200px; right: 30px; width: 220px; font-size: 13px; padding: 20px; border: 0px solid #ddd; border-radius: 8px; height: fit-content; margin-left: 30px; }
 

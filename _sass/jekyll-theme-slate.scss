@@ -490,6 +490,12 @@ Small Device Styles
 /******************************************************************************* 
 Post Thumbnail Cards 
 *******************************************************************************/
+
+section {
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+}
+
 .post-thumbnail {
   display: flex;
   flex-direction: column;
@@ -655,6 +661,47 @@ Post Thumbnail Cards
       text-decoration: underline;
     }
   }
+}
+
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.thumbnail-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.thumbnail-card:hover {
+  transform: translateY(-5px);
+}
+
+.thumbnail-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.thumbnail-image-wrapper img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem;
 }
 
 .sidebar {
