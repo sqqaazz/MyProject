@@ -1,0 +1,33 @@
+---
+layout: category
+title: AI
+category: AI
+permalink: /category/AI/
+---
+
+{% assign category_posts = site.categories[page.category] %}
+
+<div class="layout">
+    <section class="post-thumbnail">
+        {% for post in category_posts %}
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+            <div class="post-card">
+                {% if post.image %}
+                <div class="post-image-wrapper">
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
+                </div>
+                {% endif %}
+                <div class="post-content">
+                    <h3 class="post-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+                    </h3>
+                    <p class="post-excerpt">{{ post.excerpt }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </section>
+    {% include sidebar.html %}
+</div>
+</section>
