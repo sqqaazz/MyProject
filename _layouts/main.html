@@ -60,9 +60,16 @@
 
       <section id="projects">
         <h2><span style="color: gray; font-weight: bold; font-size: 28px;">Project</span></h2>
-        <p> 플레이어와 AI는 주어진 자원을 활용하여 건물 배치/유닛 생산/업그레이드 등을 수행하여 전장을 유리하게 하는 역할을 하고,</p>
-        <p>두 '플레이어' 에 의해 소환된 유닛들이 각자의 AI를 가지고 지정된 명령을 수행하여 최종적으로는 적 기지를 파괴하는 것을 목표로 하는</p>
-        <p>턴제 전략 게임을 목표로 프로젝트를 개발 중에 있습니다.</p>
+        <h2><span style="color: white; font-size: 20px;">개요</span></h2>
+        <p style="color: white; font-size: 16px;"> 플레이어와 AI는 주어진 자원을 활용하여 건물 배치/유닛 생산/업그레이드 등을 수행하여 전장을 유리하게 하는 역할을 하고,</p>
+        <p style="color: white; font-size: 16px;">두 '플레이어' 에 의해 소환된 유닛들이 각자의 AI를 가지고 지정된 명령을 수행하여 최종적으로는 적 기지를 파괴하는 것을 목표로 하는</p>
+        <p style="color: white; font-size: 16px;">턴제 전략 게임을 목표로 프로젝트를 개발 중에 있습니다.</p>
+        <h2><span style="color: white; font-size: 20px;">주요 기능</span></h2>
+        <p style="color: white; font-size: 16px;">⦁	그리드 기반 필드 상의 오브젝트 제어</p>
+        <p style="color: white; font-size: 16px;">⦁	그리드 기반 필드 위의 전투 유닛 AI 알고리즘(공격, 이동, 엄폐 등) 구현</p>
+        <p style="color: white; font-size: 16px;">⦁	턴제 전투 기반의 지휘 AI 알고리즘 구현</p>
+        <p style="color: white; font-size: 16px;">⦁	원활한 관리를 위한 계층형 UI 구현</p>
+        <p style="color: white; font-size: 16px;">⦁	확장성을 고려해 상속을 활용한 하위 오브젝트 구현</p>
         <div class="thumbnail-grid">
           {% for category in site.categories %}
           {% assign category_name = category[0] %}
